@@ -6,9 +6,9 @@
 int printArg(char * arg_str, int pos){
 
 	//Insert your code here
-    // printing the argument string, and then the length of the argument string?
-    printf("argv %d: %s\n", arg_str[pos], arg_str);
-    size_t length = strlen(arg_str);
-    printf("arg length: %zu\n", length);
-	return length;
+    // am i getting the vector of the argument string?
+    // printf("position: %d\n", pos);
+    // printf("argument: %s\n", arg_str);
+    printf("argv[%d]: %s\n", pos, arg_str);
+    return 0;
 }
