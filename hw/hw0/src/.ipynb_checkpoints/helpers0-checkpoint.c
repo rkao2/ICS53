@@ -10,5 +10,7 @@ int printArg(char * arg_str, int pos){
     // printf("position: %d\n", pos);
     // printf("argument: %s\n", arg_str);
     printf("argv[%d]: %s\n", pos, arg_str);
-    return 0;
+    size_t length = strlen(arg_str);
+    
+    return length;
 }
