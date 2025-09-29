@@ -1,0 +1,9 @@
+touch .gitignore
+echo "hw/*/bin/" >> .gitignore
+echo "*.class" >> .gitignore
+echo "*.o" >> .gitignore
+echo "*.exe" >> .gitignore
+hw/*/bin/
+*.class
+*.o
+*.exe
