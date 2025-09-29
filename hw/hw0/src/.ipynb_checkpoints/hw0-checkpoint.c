@@ -9,9 +9,12 @@ int main (int argc, char *argv[])
     // printArg("sample", 0); // supposed to print argv[0]: sample
     size_t length = 0; // is this initialized?
     
-    // printArg(argv[0], 0);
+    printf("argv[0]: %s\n", argv[0]); // printing the first one always
+    
     // printArg(argv[1], 1);
-    for(int i = 0; i < argc; i++){
+    // argc = ./bin/hw0 a b c d 
+    // index = [0]     [1][2]{3][4]
+    for(int i = 1; i < argc; i++){
         length += printArg(argv[i], i);
     }
     
