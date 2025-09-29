@@ -7,3 +7,7 @@ hw/*/bin/
 *.class
 *.o
 *.exe
+hw/*/bin/
+*.class
+*.o
+*.exe
