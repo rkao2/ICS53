@@ -170,7 +170,8 @@ char formattxt(FILE *fptr, const char *option) {
 
     
     if(strcmp(option, "-h") == 0){ titlePrompt(); }
-    else if(strcmp(option, "-U") == 0) lower = 1;
+    else if(strcmp(option, "-U") == 0) upper = 1;
+    else if(strcmp(option, "L") == 0) lower = 1;
     else if (strcmp(option, "-T") == 0) title = 1;
     else if (strcmp(option, "-t") == 0) firstChar = 1;
     else if (strcmp(option, "-R") == 0) removeChar = 1;
