@@ -15,28 +15,34 @@ int main(int argc, char *argv[]) {
         // length of longest line (in characters)
 
     if (argc < 2) {
-        printf("Error: missing arguments.\n");
         titlePrompt();
         return 1;
     }
 
     const char *option = argv[1];
-    FILE *fptr = NULL;
+    const char *symbol_to_remove = argv[2];
+    FILE *fptr = stdin;
 
-    // Check if a filename was provided
-    if (argc >= 3) {
-        fptr = fopen(argv[2], "r");
-        if (!fptr) {
-            perror("Error opening input file");
+
+    if(strcmp(option, "-R") == 0){
+        if(argc < 3) {  // missing SYMBOLS argument
+            titlePrompt();
             return 1;
         }
-    } else {
-        // No filename, use stdin (input redirection)
-        fptr = stdin;
+        symbol_to_remove = argv[2];
+    }
+
+    if(argc >= 3 && strcmp(option, "-R") != 0){
+        fptr = fopen(argv[2], "r");
+        if (!fptr) {
+            perror("this is not a file pointer!");
+            return 1;
+        }
+        setvbuf(fptr, NULL, _IONBF, 0);
     }
 
     // Call your formattxt function, passing the FILE* instead of filename
-    formattxt(fptr, option);
+    formattxt(fptr, option, symbol_to_remove);
 
     return 0;
 }
