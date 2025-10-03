@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
         // length of longest line (in characters)
 
     if (argc < 2) {
-        titlePrompt();
+        titlePromptError();
         return 1;
     }
 
@@ -24,9 +24,9 @@ int main(int argc, char *argv[]) {
     FILE *fptr = stdin;
 
 
-    if(strcmp(option, "-R") == 0){
-        if(argc < 3) {  // missing SYMBOLS argument
-            titlePrompt();
+    if (strcmp(option, "-R") == 0) {
+        if (argc < 3) {
+            titlePromptError();
             return 1;
         }
         symbol_to_remove = argv[2];
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     if(argc >= 3 && strcmp(option, "-R") != 0){
         fptr = fopen(argv[2], "r");
         if (!fptr) {
-            perror("this is not a file pointer!");
+            fprintf(stderr, "Error opening file\n");
             return 1;
         }
         setvbuf(fptr, NULL, _IONBF, 0);
